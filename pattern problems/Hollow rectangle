@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   
+    int rowcount;
+    int colmcount;
+    cout << "enter row number" << endl;
+    cin >> rowcount;
+    cout << "enter column number" << endl;
+    cin >> colmcount;
+    for (int row = 0; row < rowcount; row += 1)
+    {
+        if (row == 0 || row == rowcount - 1)
+        {
+            for (int colm = 0; colm < colmcount; colm += 1)
+            {
+                cout << "* ";
+            }
+            cout << endl;
+        }
+        else
+        {
+            cout << "* ";
+            for (int i = 0; i < colmcount - 2; i += 1)
+            {
+                cout << "  ";
+            }
+            cout << "* ";
+            cout << endl;
+        }
+        }
+
+    return 0;
+}
