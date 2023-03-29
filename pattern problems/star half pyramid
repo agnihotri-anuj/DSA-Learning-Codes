@@ -1,0 +1,20 @@
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    
+    int rowcount;
+    cout << "enter row number" << endl;
+    cin >> rowcount;
+
+    for (int row = 0; row < rowcount; row += 1)
+    {
+
+            for (int colm = 0; colm < row+1; colm += 1)
+            {
+                cout << "* ";
+            }
+            cout << endl;
+    }
+}
