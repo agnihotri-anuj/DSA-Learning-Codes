@@ -1,0 +1,55 @@
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int FirstOccur(vector<int>v,int target)
+{
+int start=0;
+int end=v.size()-1;
+int answer=-1;
+int mid=start+(end-start)/2;
+
+while(start<=end){
+if(target==v[mid])
+{
+    answer=mid;
+    end=mid-1;
+   // start=mid+1;  //for last occurance
+}
+else if(target<v[mid])   //rat lo mid bada ban rha hai toh mid ko kam kro mid-1
+{
+    end=mid-1;
+}
+else
+ {
+    start=mid+1;
+}
+mid=start+(end-start)/2;
+}
+return answer;
+}
+
+int main()
+{
+    vector<int> v{1,2,3,4,5,5,5,5,5,6,7,7,8,9};
+    int target=5;
+
+    int result=FirstOccur(v,target);
+    cout<<"first occurance at index "<<result;
+
+    // auto ans2=lower_bound(v.begin(),v.end(),target); //first occurance function
+    // cout<<"ans is "<<ans2-v.begin()<<endl;
+
+
+    // int first = ans2 - v.begin();
+    //  auto ans1 = upper_bound(v.begin(), v.end(), target); // last occurance function
+    // cout<<"ans is "<<ans1-v.begin()<<endl;
+    // int last = ans1 - v.begin();
+
+    //     // total occourance =last-first + 1
+    //  int totaloccur = last - first ; //+1 not working here if we do by function otherwise woking
+    // cout<<totaloccur<<endl;
+
+}
+
