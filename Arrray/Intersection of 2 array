@@ -1,0 +1,36 @@
+
+#include <iostream>
+#include <vector>
+#include <limits.h>
+using namespace std;
+
+// intersection of 2 array
+int main()
+{
+    vector <int> arr{2,4,4,6,8,0,0,4};
+    vector <int> brr{2,8,9,4,0,1,0};
+
+    vector<int> ans;
+
+    for(int i=0;i<arr.size();i++)
+    {
+        int element=arr[i];
+
+        for(int j=0;j<brr.size();j++)
+        {
+            if(element==brr[j])
+            {
+            brr[j]=INT_MIN;
+            //for duplicate element we can also initialize with -1 but it will work only
+            //for all positive so we are initializing with minimum num int_min
+            ans.push_back(element);
+            }
+        }
+    }
+
+    for(int i=0;i<ans.size();i++)
+    {
+     cout<<ans[i]<<" ";
+     }
+     return 0;
+}
