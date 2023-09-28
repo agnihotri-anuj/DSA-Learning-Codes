@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+//finding unique element in array
+
+int uniqueFunction(vector<int>arr)
+{
+    int ans=0;
+    for(int i=0;i<arr.size();i++)
+    {
+        ans=ans^arr[i];
+    }
+    return ans;
+    //This function takes in a vector of integers and performs
+   //  an XOR operation on all the elements in the vector.
+    //  The XOR operation will return the unique integer value
+     // in the vector, as any duplicates will cancel each other out.
+     // This is a useful function for finding unique elements in a
+     // collection of integers
+}
+int main()
+{
+    int n;
+    cout<<"enter no of elements";
+    cin>>n;
+
+    vector<int> arr(n);
+    cout<<"enter elements";
+    for(int i=0;i<arr.size();i++)
+    {
+        cin>>arr[i];
+    }
+
+    int uniqueNo=uniqueFunction(arr);
+    cout<<"unique no in this array is : "<<uniqueNo;
+}
