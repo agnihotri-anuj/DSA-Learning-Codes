@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    //sum of pair of 2
+    vector <int> arr{2,4,3,3,1,5};
+
+    for(int i=0;i<arr.size();i++)
+    {
+        int element=arr[i];
+
+         for(int j=i+1;j<arr.size();j++) //i+1, element start next to current
+        {
+        //    cout<<"("<<element<<","<<arr[j]<<")"<<endl;
+        //if we need to print pair or see actual backend ^^^^
+        
+            if(element+arr[j]==6)
+           {
+
+           cout<<"sum of "<<"("<<element<<","<<arr[j]<<")"<<" pair is = "<<"6"<<endl;
+
+           }
+        }
+
+    }
+
+}
